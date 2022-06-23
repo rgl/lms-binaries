@@ -11,12 +11,22 @@ These are built in [rgl/lms](https://github.com/rgl/lms) by a [GitHub Actions wo
 You can install this in Ubuntu 22.04 as:
 
 ```bash
-wget https://github.com/rgl/lms-binaries/releases/download/v0.0.20220429/lms-2151.0.0-ubuntu-22.04.deb
+sudo bash <<'EOF'
+set -euxo pipefail
+deb_url='https://github.com/rgl/lms-binaries/releases/download/v0.0.20220623/lms-2226.0.0-ubuntu-22.04.deb'
+repo_path='/opt/apt/repo.d/lms'
+install -d $repo_path
+cd $repo_path
+wget --no-clobber $deb_url
+apt-get install -y dpkg-dev
 dpkg-deb --info *.deb
 dpkg-deb --contents *.deb
-sudo apt-get install -y libace-7.0.6 libxerces-c3.2
-sudo dpkg --install *.deb
-sudo systemctl status lms
+dpkg-scanpackages . >Packages
+echo "deb [trusted=yes] file:$repo_path ./" >/etc/apt/sources.list.d/lms.list
+apt-get update
+apt-get install -y lms
+systemctl status lms
+EOF
 ```
 
 Watch the logs:
