@@ -1,6 +1,7 @@
 This has the [Intel LMS (Local Manageability Service)](https://github.com/intel/lms) binaries for:
 
 * Debian 11
+* Debian 12
 * Ubuntu 20.04
 * Ubuntu 22.04
 
@@ -13,7 +14,7 @@ You can install this in Ubuntu 22.04 using bash as:
 ```bash
 sudo bash <<'EOF'
 set -euxo pipefail
-deb_url='https://github.com/rgl/lms-binaries/releases/download/v0.0.20220623/lms-2226.0.0-ubuntu-22.04.deb'
+deb_url='https://github.com/rgl/lms-binaries/releases/download/v0.0.20230801/lms-2322.0.0-ubuntu-22.04.deb'
 repo_path='/opt/apt/repo.d/lms'
 install -d $repo_path
 cd $repo_path
@@ -34,7 +35,7 @@ You can install this in Ubuntu 22.04 using ansible as:
 ```yaml
 - name: Install lms
   apt:
-    deb: https://github.com/rgl/lms-binaries/releases/download/v0.0.20220623/lms-2226.0.0-ubuntu-22.04.deb
+    deb: https://github.com/rgl/lms-binaries/releases/download/v0.0.20230801/lms-2322.0.0-ubuntu-22.04.deb
 ```
 
 Watch the logs:
