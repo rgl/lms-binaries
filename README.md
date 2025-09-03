@@ -2,6 +2,7 @@ This has the [Intel LMS (Local Manageability Service)](https://github.com/intel/
 
 * Debian 11
 * Debian 12
+* Debian 13
 * Ubuntu 20.04
 * Ubuntu 22.04
 * Ubuntu 24.04
@@ -15,7 +16,7 @@ You can install this in Ubuntu 24.04 using bash as:
 ```bash
 sudo bash <<'EOF'
 set -euxo pipefail
-deb_url='https://github.com/rgl/lms-binaries/releases/download/v0.0.20240831/lms-2426.0.0-ubuntu-24.04.deb'
+deb_url='https://github.com/rgl/lms-binaries/releases/download/v0.0.20250903/lms-2506.0.0-ubuntu-24.04.deb'
 repo_path='/opt/apt/repo.d/lms'
 install -d $repo_path
 cd $repo_path
@@ -36,7 +37,7 @@ You can install this in Ubuntu 24.04 using ansible as:
 ```yaml
 - name: Install lms
   apt:
-    deb: https://github.com/rgl/lms-binaries/releases/download/v0.0.20240831/lms-2426.0.0-ubuntu-24.04.deb
+    deb: https://github.com/rgl/lms-binaries/releases/download/v0.0.20250903/lms-2506.0.0-ubuntu-24.04.deb
 ```
 
 Watch the logs:
