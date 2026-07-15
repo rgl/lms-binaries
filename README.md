@@ -17,7 +17,7 @@ You can install this in Ubuntu 24.04 using bash as:
 ```bash
 sudo bash <<'EOF'
 set -euxo pipefail
-deb_url='https://github.com/rgl/lms-binaries/releases/download/v0.0.20251226/lms-2550.0.0-ubuntu-24.04.deb'
+deb_url='https://github.com/rgl/lms-binaries/releases/download/v0.0.20260715/lms-2625.0.0-ubuntu-24.04.deb'
 repo_path='/opt/apt/repo.d/lms'
 install -d $repo_path
 cd $repo_path
@@ -38,7 +38,7 @@ You can install this in Ubuntu 24.04 using ansible as:
 ```yaml
 - name: Install lms
   apt:
-    deb: https://github.com/rgl/lms-binaries/releases/download/v0.0.20251226/lms-2550.0.0-ubuntu-24.04.deb
+    deb: https://github.com/rgl/lms-binaries/releases/download/v0.0.20260715/lms-2625.0.0-ubuntu-24.04.deb
 ```
 
 Watch the logs:
